@@ -19,8 +19,8 @@
 #' TO-DO
 #' }
 get_ifn_metadata <- function(dir = NULL,
-                         unlist = FALSE,
-                         quiet = FALSE){
+                             unlist = FALSE,
+                             quiet = FALSE){
 
   metadata <- list(code = load_code(dir, quiet),
                    units = load_units(dir, quiet),
@@ -45,6 +45,8 @@ load_code <- function(dir = NULL,
 
   if (is.null(dir)){
     dir <- archive_read(get_url(), "metadonnees.csv")
+  }else{
+    dir <- file.path(dir,  "metadonnees.csv")
   }
 
   codes <- read.csv2(dir, skip = 17, nrows = 163,
@@ -68,6 +70,8 @@ load_units <- function(dir = NULL,
 
   if (is.null(dir)){
     dir <- archive_read(get_url(), "metadonnees.csv")
+  }else{
+    dir <- file.path(dir,  "metadonnees.csv")
   }
 
   units <- read.csv2(dir, skip = 184, nrows = 152,
@@ -89,6 +93,8 @@ load_units_value_set <- function(dir = NULL,
 
   if (is.null(dir)){
     dir <- archive_read(get_url(), "metadonnees.csv")
+  }else{
+    dir <- file.path(dir,  "metadonnees.csv")
   }
 
   units_value_set <- read.csv2(dir, skip = 337,
