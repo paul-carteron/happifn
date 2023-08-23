@@ -4,11 +4,10 @@
 \alias{get_ifn}
 \title{get_ifn}
 \usage{
-get_ifn(dataset = "arbre", dir = NULL)
+get_ifn(names = "arbre", dir = NULL)
 }
 \arguments{
-\item{dataset}{\code{character}; Name of needed dataset. If "all", every dataset
-are returned.}
+\item{names}{\code{character}; Name of needed dataset.}
 
 \item{dir}{\code{character} or \code{NULL}; connection open for writing.
 (ex : "~/test"). If \code{NULL}, dataset are seamlessly imported into memory.
@@ -23,6 +22,6 @@ directory, else they are seamlessly downloaded before loading.
 }
 \examples{
 \dontrun{
-TO-DO
+all_dataset <- get_ifn(names = get_dataset_names())
 }
 }

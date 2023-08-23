@@ -36,5 +36,5 @@ get_url <- function(all = F){
 #' }
 get_dataset_names <- function(){
   c("arbre", "bois_mort", "couvert", "ecologie", "flore", "habitat",
-    "placette", "all")
+    "placette")
 }

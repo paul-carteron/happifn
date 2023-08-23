@@ -4,8 +4,8 @@ test_that("get_url works", {
 })
 
 test_that("get_dataset_names works", {
-  expect_equal(length(get_dataset_names()), 8)
+  expect_equal(length(get_dataset_names()), 7)
   expect_equal(get_dataset_names(),
               c("arbre", "bois_mort", "couvert", "ecologie", "flore",
-                "habitat","placette", "all"))
+                "habitat","placette"))
 })
