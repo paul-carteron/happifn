@@ -2,6 +2,7 @@
 
 export(get_dataset_names)
 export(get_ifn)
+export(get_ifn_all)
 export(get_metadata)
 export(get_url)
 importFrom(archive,archive_read)

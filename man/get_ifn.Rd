@@ -30,5 +30,8 @@ arbre <- get_ifn(name = "arbre", dir = NULL)
 
 all_dataset <- lapply(get_dataset_names(), get_ifn) |>
                setNames(get_dataset_names())
+
+Load all dataset to globalenv
+list2env(datasets, envir = globalenv())
 }
 }

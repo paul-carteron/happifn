@@ -38,3 +38,17 @@ get_dataset_names <- function(){
   c("arbre", "bois_mort", "couvert", "ecologie", "flore", "habitat",
     "placette")
 }
+
+#' @title get_ifn_all
+#' @description
+#' Wrapper function to load all ifn datasets in memory
+#'
+#' @usage get_ifn_all()
+#'
+#' @return `NULL`
+#' @export
+get_ifn_all <- function(){
+  lapply(get_dataset_names(), get_ifn) |>
+    setNames(get_dataset_names()) |>
+    list2env(envir = globalenv())
+}

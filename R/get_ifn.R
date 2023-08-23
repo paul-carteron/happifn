@@ -25,6 +25,9 @@
 #'
 #' all_dataset <- lapply(get_dataset_names(), get_ifn) |>
 #'                setNames(get_dataset_names())
+#'
+#' Load all dataset to globalenv
+#' list2env(datasets, envir = globalenv())
 #' }
 get_ifn <- function(name,
                     dir = NULL,
@@ -71,12 +74,16 @@ load_ifn <- function(name, dir, quiet){
 
   name <- paste0(toupper(name),".csv")
 
-  res <- try(read.csv2(file.path(dir, name)), silent = T)
+  res <- try(read.csv2(file.path(dir, name),
+                       fileEncoding = "UTF-8",
+                       na.strings = c("NA", "", " ")), silent = T)
 
   if(inherits(res, "try-error")){
-    if (!quiet){message("Loading \"", name, "\" dataset...", appendLF = F)}
+    if (!quiet){message("Loading ", name, " dataset...", appendLF = F)}
 
-    res <- read.csv2(archive_read(get_url(), name))
+    res <- read.csv2(archive_read(get_url(), name),
+                     fileEncoding = "UTF-8",
+                     na.strings = c("NA", "", " "))
 
     if (!quiet){message(" done.")}
   }
