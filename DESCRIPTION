@@ -1,11 +1,22 @@
 Type: Package
 Package: happifn
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
+Title: R Interface to French 'IFN'
+Version: 0.0.0.9000
+Authors@R: person(
+             "Paul", "Carteron", 
+             email = "carteronpaul@gmail.com",
+             role = c("aut", "cre"),
+             comment = c(ORCID = "0000-0002-6942-6662")
+             )
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line) Use four
     spaces when indenting paragraphs within the Description.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+URL: https://github.com/paul-carteron/happifn
+BugReports: https://github.com/paul-carteron/happifn/issues
+Imports: 
+    archive
