@@ -4,11 +4,15 @@
 \alias{get_ifn_all}
 \title{get_ifn_all}
 \usage{
-get_ifn_all()
+get_ifn_all(unlist = T)
+}
+\arguments{
+\item{unlist}{\code{boolean}; if TRUE, all datasets are load into globalenv. if
+FALSE, a list of datasets is returned.}
 }
 \value{
-\code{NULL}
+\code{NULL} or \code{list}
 }
 \description{
-Wrapper function to load all ifn datasets in memory
+Wrapper function to load all ifn datasets
 }

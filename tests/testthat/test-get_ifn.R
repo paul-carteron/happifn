@@ -41,3 +41,13 @@ test_that("get_ifn works without dir", {
   expect_equal(class(res), "data.frame")
   expect_equal(dim(res), c(1815L, 14L))
 })
+
+test_that("get_ifn works placette", {
+  tmp <- tempdir(check = T)
+  write.csv2(data.frame(id = 1, XL = 765793, YL = 6667114),
+             file.path(tmp, "PLACETTE.csv"), row.names = F)
+
+  res <- get_ifn("placette", dir = tmp)
+  expect_s3_class(res, "sf")
+  expect_equal(dim(res), c(1L, 2L))
+})

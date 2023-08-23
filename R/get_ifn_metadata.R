@@ -1,11 +1,15 @@
-#' @title get_metadata
+#' @title get_ifn_metadata
 #'
 #' @description
 #' Load a list with three metadata dataset
 #'
-#' @param dir `character` or `NULL`; connection open for writing.
-#' (ex : "~/test"). If `NULL`, dataset are seamlessly imported into memory.
-#' Be careful; it may take a while.
+#' @usage get_ifn_metadata(dir = NULL,
+#'                     unlist = FALSE,
+#'                     quiet = FALSE)
+#'
+#' @inheritParams get_ifn
+#' @param unlist `boolean`; if TRUE, all datasets are load into globalenv. if
+#' FALSE, a list of datasets is returned.
 #'
 #' @return `list`; three dataset
 #' @export
@@ -14,20 +18,31 @@
 #' \dontrun{
 #' TO-DO
 #' }
-get_metadata <- function(dir = NULL){
+get_ifn_metadata <- function(dir = NULL,
+                         unlist = FALSE,
+                         quiet = FALSE){
 
-  res <- list(code = load_code(dir),
-              units = load_units(dir),
-              units_value_set = load_units_value_set(dir))
+  metadata <- list(code = load_code(dir, quiet),
+                   units = load_units(dir, quiet),
+                   units_value_set = load_units_value_set(dir, quiet))
 
-  return(res)
+  if (unlist){
+    list2env(metadata, envir = globalenv())
+    metadata <- NULL
+  }
+
+  return(metadata)
 }
 
 #' @importFrom archive archive_read
 #' @importFrom utils read.csv2
-load_code <- function(dir = NULL){
+#' @noRd
+#'
+load_code <- function(dir = NULL,
+                      quiet = FALSE){
 
-  dir <- file.path(dir, "metadonnees.csv")
+  if (!quiet){message("Loading CODE dataset...")}
+
   if (is.null(dir)){
     dir <- archive_read(get_url(), "metadonnees.csv")
   }
@@ -44,9 +59,13 @@ load_code <- function(dir = NULL){
 
 #' @importFrom archive archive_read
 #' @importFrom utils read.csv2
-load_units <- function(dir = NULL){
+#' @noRd
+#'
+load_units <- function(dir = NULL,
+                       quiet = FALSE){
 
-  dir <- file.path(dir, "metadonnees.csv")
+  if (!quiet){message("Loading UNITS dataset...")}
+
   if (is.null(dir)){
     dir <- archive_read(get_url(), "metadonnees.csv")
   }
@@ -61,9 +80,13 @@ load_units <- function(dir = NULL){
 
 #' @importFrom archive archive_read
 #' @importFrom utils read.csv2
-load_units_value_set <- function(dir = NULL){
+#' @noRd
+#'
+load_units_value_set <- function(dir = NULL,
+                                 quiet = FALSE){
 
-  dir <- file.path(dir, "metadonnees.csv")
+  if (!quiet){message("Loading UNITS_VALUE_SET dataset...")}
+
   if (is.null(dir)){
     dir <- archive_read(get_url(), "metadonnees.csv")
   }

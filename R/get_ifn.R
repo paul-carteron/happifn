@@ -55,7 +55,13 @@ get_ifn <- function(name,
     stop("`dir` does not exist. Check with `dir.exists(dir)`", call. = F)
   }
 
+  # load dataset ----
   dataset <- load_ifn(name, dir, quiet)
+
+  if (name == "placette"){
+    dataset <- ifn_as_sf(dataset)
+  }
+
   return(dataset)
 }
 
@@ -79,13 +85,13 @@ load_ifn <- function(name, dir, quiet){
                        na.strings = c("NA", "", " ")), silent = T)
 
   if(inherits(res, "try-error")){
-    if (!quiet){message("Loading ", name, " dataset...", appendLF = F)}
+    if (!quiet){message("Loading ", name, " dataset...")}
 
     res <- read.csv2(archive_read(get_url(), name),
                      fileEncoding = "UTF-8",
                      na.strings = c("NA", "", " "))
-
-    if (!quiet){message(" done.")}
+    # all dataset have an empty X column at the end
+    res <- res[ , -ncol(res)]
   }
 
   return(res)
