@@ -26,5 +26,5 @@ The goal of happifn is to make it easier to access and format IFN (National Fore
 You can install the development version of happifn like so:
 
 ``` r
-devtools::install_github("paul-carteron/happifn)
+devtools::install_github("paul-carteron/happifn")
 ```
