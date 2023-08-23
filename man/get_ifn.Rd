@@ -4,14 +4,18 @@
 \alias{get_ifn}
 \title{get_ifn}
 \usage{
-get_ifn(names = "arbre", dir = NULL)
+get_ifn(name,
+               dir = NULL,
+               quiet = FALSE)
 }
 \arguments{
-\item{names}{\code{character}; Name of needed dataset.}
+\item{name}{\code{character}; Name of needed dataset.}
 
 \item{dir}{\code{character} or \code{NULL}; connection open for writing.
 (ex : "~/test"). If \code{NULL}, dataset are seamlessly imported into memory.
 Be careful; it may take a while.}
+
+\item{quiet}{\code{boolean}; If TRUE no message are displayed.}
 }
 \value{
 \code{NULL}; datasets are loaded intot emory
@@ -22,6 +26,9 @@ directory, else they are seamlessly downloaded before loading.
 }
 \examples{
 \dontrun{
-all_dataset <- get_ifn(names = get_dataset_names())
+arbre <- get_ifn(name = "arbre", dir = NULL)
+
+all_dataset <- lapply(get_dataset_names(), get_ifn) |>
+               setNames(get_dataset_names())
 }
 }
