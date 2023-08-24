@@ -1,0 +1,73 @@
+---
+title: "getting_started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{getting_started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(happifn)
+```
+
+# Get raw datasets
+
+`happifn` can be used to retrieve raw data from permanent sample plots. Seven datasets are available. Their names can be retrieved using `get_datasets_names()` :
+
+```{r get_dataset_names}
+get_dataset_names()
+```
+
+Then simply use the `get_ifn()` function to retrieve them. If no directory is specified, the data is seamlessly loaded into R from a url. If you wanna use a directory, ".zip" file from `get_url()` must be downloaded upstream and then unzipped in the same directory.
+
+```{r get_ifn, eval=FALSE}
+arbre <- get_ifn("arbre", dir = NULL)
+```
+
+Here's a little trick for loading several datasets into memory at once :
+
+```{r get_ifn_all, eval=FALSE}
+datasets <- lapply(get_dataset_names(), get_ifn) |>
+  setNames(get_dataset_names())
+
+# Load all dataset to globalenv
+list2env(datasets, envir = globalenv())
+```
+
+For a better understanding of how datasets are constructed, you can retrieve the metadata using `get_ifn_metadata()`. Three metadatasets are availables : "code", "units", "units_value_set".
+
+
+```{r get_ifn_metadata, eval=FALSE}
+metadata <- get_ifn_metadata()
+
+code <- metadata[[1]]
+```
+
+# Get spatial datasets
+
+The IFN also provides geographic layers grouping together different forest regions. As these layers are heavy, they are stored in another happifndata package. To load them, use `check_happifndata()`. For the moment, four data sets are available : 
+
+- "ser" : sylvoecoregion;
+- "ser_ar" : sylvoecoregion d'alluvions recents;
+- "rfn" : regions forestieres nationales
+- "zp" : zone phytogeographiques
+
+```{r happifndata, eval = FALSE}
+check_happifndata()
+library(happifndata)
+
+data("ser")
+data("ser_ar")
+data("rfn")
+data("zp")
+
+```
+
