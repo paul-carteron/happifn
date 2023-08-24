@@ -5,3 +5,8 @@
 ^LICENSE\.md$
 ^codecov\.yml$
 ^data-raw$
+^doc$
+^Meta$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
