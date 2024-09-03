@@ -81,19 +81,20 @@ If no directory is specified, the data is seamlessly loaded into R from
 a url. If you wanna use a directory, “.zip” file from
 <code><a href="../reference/get_url.html">get_url()</a></code> must be downloaded upstream and then unzipped in
 the same directory.</p>
+<p><strong>Note:</strong> The <code>placette</code> dataset will be
+automatically converted to a spatial <code>sf</code> object.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">arbre</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_ifn.html">get_ifn</a></span><span class="op">(</span><span class="st">"arbre"</span>, dir <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
-<p>Here’s a little trick for loading several datasets into memory at
-once :</p>
+<p>There a wrapper function to get all data at once :
+<code><a href="../reference/get_ifn_all.html">get_ifn_all()</a></code>. That will download and load all datasets in
+one go.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">datasets</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="fu"><a href="../reference/get_dataset_names.html">get_dataset_names</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">get_ifn</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/setNames.html" class="external-link">setNames</a></span><span class="op">(</span><span class="fu"><a href="../reference/get_dataset_names.html">get_dataset_names</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Load all dataset to globalenv</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list2env.html" class="external-link">list2env</a></span><span class="op">(</span><span class="va">datasets</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_ifn_all.html">get_ifn_all</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>For a better understanding of how datasets are constructed, you can
 retrieve the metadata using <code><a href="../reference/get_ifn_metadata.html">get_ifn_metadata()</a></code>. Three
-metadatasets are availables : “code”, “units”, “units_value_set”.</p>
+metadatasets are availables : “code”, “units”, “units_value_set”. If
+<code>unlist = TRUE</code>, instead of having a list with three tables,
+each table will be added to the environment as a separate variable.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_ifn_metadata.html">get_ifn_metadata</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -104,8 +105,9 @@ metadatasets are availables : “code”, “units”, “units_value_set”.</p
 </h2>
 <p>The IFN also provides geographic layers grouping together different
 forest regions. As these layers are heavy, they are stored in another
-happifndata package. To load them, use <code><a href="../reference/check_happifndata.html">check_happifndata()</a></code>.
-For the moment, four data sets are available :</p>
+package (<code>happifndata</code>)[<a href="https://github.com/paul-carteron/happifndata" class="external-link uri">https://github.com/paul-carteron/happifndata</a>]. To load
+them, use <code><a href="../reference/check_happifndata.html">check_happifndata()</a></code>. For the moment, four data
+sets are available :</p>
 <ul>
 <li>“ser” : sylvoecoregion;</li>
 <li>“ser_ar” : sylvoecoregion d’alluvions recents;</li>
