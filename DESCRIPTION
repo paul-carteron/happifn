@@ -1,14 +1,14 @@
 Type: Package
 Package: happifn
 Title: R Interface to French 'IFN'
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person(
              "Paul", "Carteron", 
              email = "carteronpaul@gmail.com",
              role = c("aut", "cre"),
              comment = c(ORCID = "0000-0002-6942-6662")
              )
-Maintainer: The package maintainer <carteronpaul@gmail.com>
+Maintainer: Paul Carteron <carteronpaul@gmail.com>
 Description: Allows you to import raw data from the permanent plots of the 
     National Forest Inventory (France) and the spatial contours of the major 
     forest groupings.
@@ -25,11 +25,8 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0),
     devtools (>= 1.10.0),
-    happifndata,
     knitr,
     rmarkdown
-Remotes:
-    paul-carteron/happifndata
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)
