@@ -2,4 +2,6 @@
 
 `happifn` sucessfully pass R-CMD-Check test from rhub::rhub_chek()
 
-Result can be found (here)[https://github.com/paul-carteron/happign/blob/main/cran-comments.md]
+macos (R-devel) doesn't work because of `archive` package, not `happifn`.
+
+Result can be found (here)[https://github.com/paul-carteron/happifn/actions/runs/10685008479]
