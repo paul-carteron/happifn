@@ -10,6 +10,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![R-CMD-check](https://github.com/paul-carteron/happifn/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/paul-carteron/happifn/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/paul-carteron/happifn/branch/main/graph/badge.svg)](https://app.codecov.io/gh/paul-carteron/happifn?branch=main)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/happifn)](https://CRAN.R-project.org/package=happifn)
 <!-- badges: end -->
 
 The goal of happifn is to make it easier to access and format IFN

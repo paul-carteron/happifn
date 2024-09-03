@@ -21,6 +21,8 @@ test_that("load_ifn works from dir", {
 
 test_that("load_ifn works without dir", {
   skip_if_offline()
+  skip_on_cran()
+  skip_on_ci()
 
   res <- load_ifn("habitat", dir = NULL, quiet = T)
   expect_equal(class(res), "data.frame")
@@ -29,6 +31,8 @@ test_that("load_ifn works without dir", {
 
 test_that("load_ifn quiet parameter", {
   skip_if_offline()
+  skip_on_cran()
+  skip_on_ci()
 
   expect_message(load_ifn("habitat", dir = NULL, quiet = F)) |> suppressMessages()
   expect_no_message(load_ifn("habitat", dir = NULL, quiet = T))
@@ -36,6 +40,8 @@ test_that("load_ifn quiet parameter", {
 
 test_that("get_ifn works without dir", {
   skip_if_offline()
+  skip_on_cran()
+  skip_on_ci()
 
   res <- get_ifn("habitat", dir = NULL)
   expect_equal(class(res), "data.frame")

@@ -3,6 +3,9 @@
 
 test_that("get_ifn_metadata works from internet", {
   skip_if_offline()
+  skip_on_cran()
+  skip_on_ci()
+
   res <- get_ifn_metadata(dir = NULL, unlist = F, quiet = T)
 
   expect_equal(class(res), "list")
