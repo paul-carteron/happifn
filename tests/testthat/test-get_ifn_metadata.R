@@ -33,7 +33,7 @@ test_that("load_units works from dir", {
   units <- load_units(tmp, quiet = T)
 
   expect_equal(class(units), "data.frame")
-  expect_equal(dim(units), c(152L, 6L))
+  expect_equal(dim(units), c(216, 6L))
   expect_equal(names(units),
                c("data", "units", "campagnes", "type", "libelle", "definition"))
 })
@@ -47,7 +47,8 @@ test_that("load_units works from dir", {
   units_value_set <- load_units_value_set(tmp, quiet = T)
 
   expect_equal(class(units_value_set), "data.frame")
-  expect_equal(dim(units_value_set), c(63L, 4L))
+  expect_equal(dim(units_value_set), c(20L, 4L))
   expect_equal(names(units_value_set),
                c("units", "code", "libelle", "definition"))
 })
+

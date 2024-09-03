@@ -12,10 +12,10 @@
 #' get_url()
 #' }
 get_url <- function(all = F){
-  url <- enc2utf8("https://inventaire-forestier.ign.fr/dataifn/data/export_dataifn_2021.zip")
+  url <- enc2utf8("https://inventaire-forestier.ign.fr/dataifn/data/export_dataifn_2022.zip")
 
   if (all){
-    url <- enc2utf8("https://inventaire-forestier.ign.fr/dataifn/data/export_dataifn_2005_2021.zip")
+    url <- enc2utf8("https://inventaire-forestier.ign.fr/dataifn/data/export_dataifn_2005_2022.zip")
   }
 
   return(url)

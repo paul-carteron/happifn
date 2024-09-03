@@ -23,11 +23,6 @@
 #' \dontrun{
 #' arbre <- get_ifn(name = "arbre", dir = NULL)
 #'
-#' all_dataset <- lapply(get_dataset_names(), get_ifn) |>
-#'                setNames(get_dataset_names())
-#'
-#' Load all dataset to globalenv
-#' list2env(datasets, envir = globalenv())
 #' }
 get_ifn <- function(name,
                     dir = NULL,
@@ -63,6 +58,30 @@ get_ifn <- function(name,
   }
 
   return(dataset)
+}
+
+#' @title get_ifn_all
+#' @description
+#' Wrapper function to load all ifn datasets
+#'
+#' @usage get_ifn_all(unlist = T)
+#'
+#' @param unlist `boolean`; if TRUE, all datasets are load into globalenv. if
+#' FALSE, a list of datasets is returned.
+#'
+#' @return `NULL` or `list`
+#' @export
+get_ifn_all <- function(unlist = T){
+
+  datasets <- lapply(get_dataset_names(), get_ifn) |>
+    setNames(get_dataset_names())
+
+  if (unlist){
+    list2env(datasets, envir = globalenv())
+    datasets <- NULL
+  }
+
+  return(datasets)
 }
 
 #' load_ifn

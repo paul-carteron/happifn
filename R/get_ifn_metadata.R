@@ -69,12 +69,12 @@ load_units <- function(dir = NULL,
   if (!quiet){message("Loading UNITS dataset...")}
 
   if (is.null(dir)){
-    dir <- archive_read(get_url(), "metadonnees.csv")
+    dir <- archive_read(get_url(all =), "metadonnees.csv")
   }else{
     dir <- file.path(dir,  "metadonnees.csv")
   }
 
-  units <- read.csv2(dir, skip = 184, nrows = 152,
+  units <- read.csv2(dir, skip = 184, nrows = 231,
                      row.names = NULL)
   units <- units[,-ncol(units)]
   names(units) <- c("data", "units", "campagnes", "type", "libelle", "definition")
@@ -97,7 +97,7 @@ load_units_value_set <- function(dir = NULL,
     dir <- file.path(dir,  "metadonnees.csv")
   }
 
-  units_value_set <- read.csv2(dir, skip = 337,
+  units_value_set <- read.csv2(dir, skip = 380,
                                row.names = NULL)
   units_value_set <- units_value_set[ , -ncol(units_value_set)]
   names(units_value_set) <- c("units", "code", "libelle", "definition")

@@ -1,6 +1,6 @@
 test_that("get_url works", {
-  expect_true(grepl("dataifn_2021", get_url()))
-  expect_true(grepl("dataifn_2005_2021", get_url(all = T)))
+  expect_true(grepl("dataifn_2022", get_url()))
+  expect_true(grepl("dataifn_2005_2022", get_url(all = T)))
 })
 
 test_that("get_dataset_names works", {
