@@ -3,7 +3,7 @@ pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   getting_started: getting_started.html
-last_built: 2024-09-03T15:47Z
+last_built: 2024-09-03T15:50Z
 urls:
   reference: https://paul-carteron.github.io/happifn/reference
   article: https://paul-carteron.github.io/happifn/articles
