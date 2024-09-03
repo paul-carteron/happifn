@@ -1,42 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/404.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/articles/getting_started.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/index.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/reference/check_happifndata.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/reference/get_dataset_names.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/reference/get_ifn.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/reference/get_ifn_all.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/reference/get_ifn_metadata.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/reference/get_url.html</loc>
-  </url>
-  <url>
-    <loc>https://paul-carteron.github.io/happifn/reference/index.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://paul-carteron.github.io/happifn/404.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/LICENSE.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/articles/getting_started.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/articles/index.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/authors.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/index.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/reference/check_happifndata.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/reference/get_dataset_names.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/reference/get_ifn.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/reference/get_ifn_all.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/reference/get_ifn_metadata.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/reference/get_url.html</loc></url>
+<url><loc>https://paul-carteron.github.io/happifn/reference/index.html</loc></url>
 </urlset>
+
