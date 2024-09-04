@@ -26,7 +26,7 @@ test_that("load_ifn works without dir", {
 
   res <- load_ifn("habitat", dir = NULL, quiet = T)
   expect_equal(class(res), "data.frame")
-  expect_equal(dim(res), c(3544L, 13L))
+  expect_equal(dim(res), c(48726L, 13L))
 })
 
 test_that("load_ifn quiet parameter", {
@@ -45,7 +45,7 @@ test_that("get_ifn works without dir", {
 
   res <- get_ifn("habitat", dir = NULL)
   expect_equal(class(res), "data.frame")
-  expect_equal(dim(res), c(3544L, 13L))
+  expect_equal(dim(res), c(48726L, 13L))
 })
 
 test_that("get_ifn works placette", {

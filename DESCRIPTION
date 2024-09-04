@@ -1,7 +1,7 @@
 Type: Package
 Package: happifn
 Title: R Interface to French 'IFN'
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: person(
              "Paul", "Carteron", 
              email = "carteronpaul@gmail.com",
