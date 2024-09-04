@@ -106,7 +106,7 @@ load_ifn <- function(name, dir, quiet){
   if(inherits(res, "try-error")){
     if (!quiet){message("Loading ", name, " dataset...")}
 
-    res <- read.csv2(archive_read(get_url(), name),
+    res <- read.csv2(archive_read(get_url(all = TRUE), name),
                      fileEncoding = "UTF-8",
                      na.strings = c("NA", "", " "))
     # all dataset have an empty X column at the end
