@@ -20,27 +20,27 @@ library(happifn)
 
 # Get raw datasets
 
-`happifn` can be used to retrieve raw data from permanent sample plots. Seven datasets are available. Their names can be retrieved using `get_datasets_names()` :
+`happifn` can be used to retrieve raw data from permanent sample plots. Seven datasets are available. Their names can be retrieved using `get_datasets_names()` : 
 
 ```{r get_dataset_names}
 get_dataset_names()
 ```
 
-Then simply use the `get_ifn()` function to retrieve them. If no directory is specified, the data is seamlessly loaded into R from a url. If you wanna use a directory, ".zip" file from `get_url()` must be downloaded upstream and then unzipped in the same directory.
+Then simply use the `get_ifn()` function to retrieve them. If no directory is specified, the data is seamlessly loaded into R from a url. If you wanna use a directory, ".zip" file from `get_url()` must be downloaded upstream and then unzipped in the same directory. 
 
-**Note:** The `placette` dataset will be automatically converted to a spatial `sf` object.
+**Note:** The `placette` dataset will be automatically converted to a spatial `sf` object. 
 
 ```{r get_ifn, eval=FALSE}
 arbre <- get_ifn("arbre", dir = NULL)
 ```
 
-There a wrapper function to get all data at once : `get_ifn_all()`. That will download and load all datasets in one go.
+There a wrapper function to get all data at once : `get_ifn_all()`. That will download and load all datasets in one go. 
 
 ```{r get_ifn_all, eval=FALSE}
 get_ifn_all()
 ```
 
-For a better understanding of how datasets are constructed, you can retrieve the metadata using `get_ifn_metadata()`. Three metadatasets are availables : "code", "units", "units_value_set". If `unlist = TRUE`, instead of having a list with three tables, each table will be added to the environment as a separate variable.
+For a better understanding of how datasets are constructed, you can retrieve the metadata using `get_ifn_metadata()`. Three metadatasets are availables : "code", "units", "units_value_set". If `unlist = TRUE`, instead of having a list with three tables, each table will be added to the environment as a separate variable. 
 
 
 ```{r get_ifn_metadata, eval=FALSE}
@@ -51,17 +51,17 @@ code <- metadata[[1]]
 
 # Get spatial datasets
 
-The IFN also provides geographic layers grouping together different forest regions. As these layers are heavy, they are stored in another package (`happifndata`)[https://github.com/paul-carteron/happifndata]. To load them, use `check_happifndata()`. For the moment, four data sets are available : 
+The IFN also provides geographic layers grouping together different forest regions. As these layers are heavy, they are stored in another package. To load them, use `check_happifndata()`. For the moment, four data sets are available :  
 
-- "ser" : sylvoecoregion;
-- "ser_ar" : sylvoecoregion d'alluvions recents;
-- "rfn" : regions forestieres nationales
-- "zp" : zone phytogeographiques
+- "ser" : sylvoecoregion; 
+- "ser_ar" : sylvoecoregion d'alluvions recents; 
+- "rfn" : regions forestieres nationales 
+- "zp" : zone phytogeographiques 
 
 ```{r happifndata, eval = FALSE}
 check_happifndata()
 library(happifndata)
-
+ 
 data("ser")
 data("ser_ar")
 data("rfn")

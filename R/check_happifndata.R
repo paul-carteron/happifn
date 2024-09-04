@@ -2,7 +2,7 @@
 #'
 #' @param version `character`; version of `happifndata` to check
 #'
-#' @importFrom utils packageVersion
+#' @importFrom utils packageVersion installed.packages
 #'
 #' @return NULL
 #' @export
@@ -14,7 +14,7 @@
 #'
 check_happifndata <- function(version = "0.0.0.9000") {
 
-  if (!requireNamespace("happifndata", quietly = TRUE)) {
+  if (!"happifndata" %in% rownames(installed.packages())) {
     message("The happifndata package needs to be installed.")
     install_happifndata()
 
