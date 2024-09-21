@@ -44,8 +44,8 @@
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_ifn_metadata</span><span class="op">(</span>dir <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>                    unlist <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                    quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<span>                        unlist <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                        quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -75,7 +75,11 @@ FALSE, a list of datasets is returned.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="va">TO</span><span class="op">-</span><span class="va">DO</span></span></span>
+<span class="r-in"><span><span class="co"># metadata as a list</span></span></span>
+<span class="r-in"><span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu">get_ifn_metadata</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># directly load metadata into globalenv</span></span></span>
+<span class="r-in"><span><span class="fu">get_ifn_metadata</span><span class="op">(</span>unlist <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
