@@ -36,6 +36,7 @@ get_ifn_metadata <- function(dir = NULL,
 
 #' @importFrom archive archive_read
 #' @importFrom utils read.csv2
+#' @return `data.frame`
 #' @noRd
 #'
 load_code <- function(dir = NULL,
@@ -61,6 +62,7 @@ load_code <- function(dir = NULL,
 
 #' @importFrom archive archive_read
 #' @importFrom utils read.csv2
+#' @return `data.frame`
 #' @noRd
 #'
 load_units <- function(dir = NULL,
@@ -84,6 +86,7 @@ load_units <- function(dir = NULL,
 
 #' @importFrom archive archive_read
 #' @importFrom utils read.csv2
+#' @return `data.frame`
 #' @noRd
 #'
 load_units_value_set <- function(dir = NULL,

@@ -4,8 +4,10 @@
 #'
 #' @importFrom utils packageVersion installed.packages
 #'
-#' @return NULL
 #' @export
+#'
+#' @returns No return value, called for check and fix installation
+#' of `happifndata`
 #'
 #' @examples
 #' \dontrun{
@@ -26,7 +28,8 @@ check_happifndata <- function(version = "0.0.0.9000") {
 
 #' install_happifndata
 #'
-#' @return NULL
+#' @returns No return value, called for check and fix installation
+#' of `happifndata`
 #' @noRd
 install_happifndata <- function(){
 
