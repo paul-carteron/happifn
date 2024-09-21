@@ -20,7 +20,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' arbre <- get_ifn(name = "arbre", dir = NULL)
 #'
 #' }

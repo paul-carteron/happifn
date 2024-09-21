@@ -51,7 +51,7 @@ get_dataset_names <- function(){
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # all ifn data as lis
 #' ifn_data <- get_ifn_all()
 #'

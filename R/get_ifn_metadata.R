@@ -15,7 +15,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # metadata as a list
 #' metadata <- get_ifn_metadata()
 #'

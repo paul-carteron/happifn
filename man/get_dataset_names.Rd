@@ -13,8 +13,7 @@ get_dataset_names()
 get_dataset_names
 }
 \examples{
-\dontrun{
 get_dataset_names()
 get_dataset_names()[1]
-}
+
 }

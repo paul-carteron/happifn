@@ -4,9 +4,9 @@
 \alias{get_ifn_all}
 \title{get_ifn_all}
 \usage{
-get_ifn_all(unlist = T)
+get_ifn_all(unlist = TRUE)
 
-get_ifn_all(unlist = T)
+get_ifn_all(unlist = TRUE)
 }
 \arguments{
 \item{unlist}{\code{boolean}; if TRUE, all datasets are load into globalenv. if
@@ -21,4 +21,14 @@ FALSE, a list of datasets is returned.}
 Wrapper function to load all ifn datasets
 
 Wrapper function to load all ifn datasets
+}
+\examples{
+\dontrun{
+# all ifn data as lis
+ifn_data <- get_ifn_all()
+
+# directly load data into globalenv
+get_ifn_all(unlist = TRUE)
+}
+
 }

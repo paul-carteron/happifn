@@ -9,11 +9,15 @@ check_happifndata(version = "0.0.0.9000")
 \arguments{
 \item{version}{\code{character}; version of \code{happifndata} to check}
 }
+\value{
+No return value, called for check and fix installation
+of \code{happifndata}
+}
 \description{
 check_happifndata
 }
 \examples{
-\dontrun{
+\donttest{
 check_happifndata()
 }
 

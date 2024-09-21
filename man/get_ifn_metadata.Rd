@@ -5,8 +5,8 @@
 \title{get_ifn_metadata}
 \usage{
 get_ifn_metadata(dir = NULL,
-                    unlist = FALSE,
-                    quiet = FALSE)
+                        unlist = FALSE,
+                        quiet = FALSE)
 }
 \arguments{
 \item{dir}{\code{character} or \code{NULL}; connection open for writing.
@@ -26,6 +26,10 @@ Load a list with three metadata dataset
 }
 \examples{
 \dontrun{
-TO-DO
+# metadata as a list
+metadata <- get_ifn_metadata()
+
+# directly load metadata into globalenv
+get_ifn_metadata(unlist = TRUE)
 }
 }

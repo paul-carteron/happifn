@@ -4,11 +4,11 @@
 \alias{get_url}
 \title{get_url}
 \usage{
-get_url(all = F)
+get_url(all = FALSE)
 }
 \arguments{
 \item{all}{\code{logical}; If \code{TRUE} url for downloading data since 2005 is returned.
-Else, only data from 2021 is returned.}
+Else, only data from 2022 is returned.}
 }
 \value{
 .zip url for downloading data
@@ -17,7 +17,7 @@ Else, only data from 2021 is returned.}
 get_url
 }
 \examples{
-\dontrun{
-get_url()
-}
+url_for_2022 <- get_url()
+url_from_2025_to_2022 <- get_url(all = TRUE)
+
 }
