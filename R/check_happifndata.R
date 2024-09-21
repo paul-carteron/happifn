@@ -10,7 +10,7 @@
 #' of `happifndata`
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' check_happifndata()
 #' }
 #'

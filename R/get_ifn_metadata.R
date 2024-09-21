@@ -4,8 +4,8 @@
 #' Load a list with three metadata dataset
 #'
 #' @usage get_ifn_metadata(dir = NULL,
-#'                     unlist = FALSE,
-#'                     quiet = FALSE)
+#'                         unlist = FALSE,
+#'                         quiet = FALSE)
 #'
 #' @inheritParams get_ifn
 #' @param unlist `boolean`; if TRUE, all datasets are load into globalenv. if
@@ -15,8 +15,12 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' TO-DO
+#' \donttest{
+#' # metadata as a list
+#' metadata <- get_ifn_metadata()
+#'
+#' # directly load metadata into globalenv
+#' get_ifn_metadata(unlist = TRUE)
 #' }
 get_ifn_metadata <- function(dir = NULL,
                              unlist = FALSE,

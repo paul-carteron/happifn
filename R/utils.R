@@ -3,14 +3,14 @@
 #' @usage get_url(all = FALSE)
 #'
 #' @param all `logical`; If `TRUE` url for downloading data since 2005 is returned.
-#' Else, only data from 2021 is returned.
+#' Else, only data from 2022 is returned.
 #' @return .zip url for downloading data
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' get_url()
-#' }
+#' url_for_2022 <- get_url()
+#' url_from_2025_to_2022 <- get_url(all = TRUE)
+#'
 get_url <- function(all = FALSE){
   url <- enc2utf8("https://inventaire-forestier.ign.fr/dataifn/data/export_dataifn_2022.zip")
 
@@ -30,10 +30,9 @@ get_url <- function(all = FALSE){
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' get_dataset_names()
 #' get_dataset_names()[1]
-#' }
+#'
 get_dataset_names <- function(){
   c("arbre", "bois_mort", "couvert", "ecologie", "flore", "habitat",
     "placette")
@@ -50,6 +49,16 @@ get_dataset_names <- function(){
 #'
 #' @return `NULL` or `list`
 #' @export
+#'
+#' @examples
+#' \donttest{
+#' # all ifn data as lis
+#' ifn_data <- get_ifn_all()
+#'
+#' # directly load data into globalenv
+#' get_ifn_all(unlist = TRUE)
+#' }
+#'
 get_ifn_all <- function(unlist = TRUE){
 
   datasets <- lapply(get_dataset_names(), get_ifn) |>
