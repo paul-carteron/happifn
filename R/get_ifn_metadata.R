@@ -69,7 +69,7 @@ load_units <- function(dir = NULL,
   if (!quiet){message("Loading UNITS dataset...")}
 
   if (is.null(dir)){
-    dir <- archive_read(get_url(all =), "metadonnees.csv")
+    dir <- archive_read(get_url(all = FALSE), "metadonnees.csv")
   }else{
     dir <- file.path(dir,  "metadonnees.csv")
   }

@@ -1,6 +1,6 @@
 Type: Package
 Package: happifn
-Title: R Interface to French 'IFN'
+Title: Interface to French 'IFN' data
 Version: 0.0.2
 Authors@R: person(
              "Paul", "Carteron", 
@@ -10,8 +10,9 @@ Authors@R: person(
              )
 Maintainer: Paul Carteron <carteronpaul@gmail.com>
 Description: Allows you to import raw data from the permanent plots of the 
-    National Forest Inventory (France) and the spatial contours of the major 
-    forest groupings.
+  french National Forest Inventory (IFN) 
+  <https://inventaire-forestier.ign.fr/dataifn>
+  and the spatial contours of the major forest groupings.
 License: AGPL (>= 3)
 Encoding: UTF-8
 LazyData: true

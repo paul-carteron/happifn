@@ -31,23 +31,23 @@ get_ifn <- function(name,
   # check input ----
   # dataset
   if (length(name) != 1){
-    stop("`name` should be of length 1, not ", length(name), ".", call. = F)
+    stop("`name` should be of length 1, not ", length(name), ".", call. = FALSE)
   }
 
   bad_name <- !(name %in% get_dataset_names())
   if (bad_name){
     stop("`name` should be one of ",
-         paste0(get_dataset_names(), collapse = ", "), ".", call. = F)
+         paste0(get_dataset_names(), collapse = ", "), ".", call. = FALSE)
   }
 
   # dir
   if (!inherits(dir, c("character", "NULL"))){
-    stop("`dir` should be of class `character` or `NULL`", call. = F)
+    stop("`dir` should be of class `character` or `NULL`", call. = FALSE)
   }
 
   bad_dir <- !is.null(dir) && !dir.exists(dir)
   if (bad_dir){
-    stop("`dir` does not exist. Check with `dir.exists(dir)`", call. = F)
+    stop("`dir` does not exist. Check with `dir.exists(dir)`", call. = FALSE)
   }
 
   # load dataset ----
@@ -64,14 +64,14 @@ get_ifn <- function(name,
 #' @description
 #' Wrapper function to load all ifn datasets
 #'
-#' @usage get_ifn_all(unlist = T)
+#' @usage get_ifn_all(unlist = TRUE)
 #'
 #' @param unlist `boolean`; if TRUE, all datasets are load into globalenv. if
 #' FALSE, a list of datasets is returned.
 #'
 #' @return `NULL` or `list`
 #' @export
-get_ifn_all <- function(unlist = T){
+get_ifn_all <- function(unlist = TRUE){
 
   datasets <- lapply(get_dataset_names(), get_ifn) |>
     setNames(get_dataset_names())
@@ -101,7 +101,7 @@ load_ifn <- function(name, dir, quiet){
 
   res <- try(read.csv2(file.path(dir, name),
                        fileEncoding = "UTF-8",
-                       na.strings = c("NA", "", " ")), silent = T)
+                       na.strings = c("NA", "", " ")), silent = TRUE)
 
   if(inherits(res, "try-error")){
     if (!quiet){message("Loading ", name, " dataset...")}

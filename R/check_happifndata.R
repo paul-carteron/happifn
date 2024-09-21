@@ -47,7 +47,7 @@ install_happifndata <- function(){
       devtools::install_github("paul-carteron/happifndata")
     },
     error = function(e) {
-      stop("Failed to install the happifndata package.\n", instructions, call. = F)
+      stop("Failed to install the happifndata package.\n", instructions, call. = FALSE)
     })
   }else{
     stop("The happifndata package is necessary for that method.\n", instructions)
