@@ -16,7 +16,7 @@
 #'
 check_happifndata <- function(version = "0.0.0.9000") {
 
-  if (!"happifndata" %in% rownames(installed.packages())) {
+  if (!requireNamespace("happifndata", quietly = TRUE)) {
     message("The happifndata package needs to be installed.")
     install_happifndata()
 
