@@ -2,36 +2,35 @@ Type: Package
 Package: happifn
 Title: Interface to French 'IFN' data
 Version: 0.0.2
-Authors@R: person(
-             "Paul", "Carteron", 
-             email = "carteronpaul@gmail.com",
-             role = c("aut", "cre"),
-             comment = c(ORCID = "0000-0002-6942-6662")
-             )
+Authors@R: 
+    person("Paul", "Carteron", , "carteronpaul@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-6942-6662"))
 Maintainer: Paul Carteron <carteronpaul@gmail.com>
-Description: Allows you to import raw data from the permanent plots of the 
-  french National Forest Inventory (IFN) 
-  <https://inventaire-forestier.ign.fr/dataifn>
-  and the spatial contours of the major forest groupings.
+Description: Allows you to import raw data from the permanent plots of the
+    french National Forest Inventory (IFN)
+    <https://inventaire-forestier.ign.fr/dataifn> and the spatial contours
+    of the major forest groupings.
 License: AGPL (>= 3)
+URL: https://github.com/paul-carteron/happifn,
+    https://paul-carteron.github.io/happifn/
+BugReports: https://github.com/paul-carteron/happifn/issues
+Depends: 
+    R (>= 2.10)
+Imports: 
+    archive,
+    remotes,
+    sf
+Suggests: 
+    devtools (>= 1.10.0),
+    happifndata (>= 0.0.0.9000),
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Additional_repositories: https://github.com/paul-carteron/happifndata
+VignetteBuilder: 
+    knitr
+Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-URL: https://github.com/paul-carteron/happifn, https://paul-carteron.github.io/happifn/
-BugReports: https://github.com/paul-carteron/happifn/issues
-Imports: 
-    archive,
-    sf
-Suggests: 
-    testthat (>= 3.0.0),
-    devtools (>= 1.10.0),
-    knitr,
-    rmarkdown,
-    happifndata
-Remotes: 
-    paul-carteron/happifndata
-Config/testthat/edition: 3
-Depends: 
-    R (>= 2.10)
-VignetteBuilder: knitr

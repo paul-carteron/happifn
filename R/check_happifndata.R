@@ -47,7 +47,7 @@ install_happifndata <- function(){
   if (input == 1){
     tryCatch({
       message("Installing the happifndata package.")
-      devtools::install_github("paul-carteron/happifndata")
+      remotes::install_github("paul-carteron/happifndata")
     },
     error = function(e) {
       stop("Failed to install the happifndata package.\n", instructions, call. = FALSE)
